@@ -1,3 +1,13 @@
+## Run command compalsury in 4209 port to execute the API's
+=>  ng serve --port 4209
+
+## Installed packages 
+1. npm i @angular/animations
+2. npm i @angular/common
+3. ng add @ng-bootstrap/ng-bootstrap
+4. npm i font-awesome
+5. npm i bootstrap@5.3.3
+
 # BankLoan
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
