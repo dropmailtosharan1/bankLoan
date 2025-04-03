@@ -7,6 +7,7 @@
 3. ng add @ng-bootstrap/ng-bootstrap
 4. npm i font-awesome
 5. npm i bootstrap@5.3.3
+6. npm i bootstrap-icons
 
 # BankLoan
 

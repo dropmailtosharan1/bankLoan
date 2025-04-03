@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MasterService } from '../../shared/master.service';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +14,8 @@ export class LoginComponent {
   
   showRegisterForm = signal<boolean>(false);
   http = inject(HttpClient);
+  router=inject(Router);
+  masterService = inject(MasterService);
 
   customerObj: any = {
     userId: 0,
@@ -69,6 +73,8 @@ export class LoginComponent {
           if (res.result) {
             sessionStorage.setItem('bankUser',JSON.stringify(res.data));
             alert('Customer Login Success');
+            this.router.navigateByUrl('loanApplicationList');
+            this.masterService.onLogged$.next(true);
           } else{
             alert(res.message);
           }

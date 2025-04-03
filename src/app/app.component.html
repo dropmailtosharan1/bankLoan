@@ -23,10 +23,13 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="loanApplicationList">Applications</a>
-        </li> <li class="nav-item">
+        </li>
+       <!-- <div *ngIf="masterService.loggedUserData.role == 'Customer'"> -->
+        <li class="nav-item">
           <a class="nav-link" routerLink="newLoanForm">New Loan</a>
         </li>
-        <li class="nav-item dropdown">
+       <!-- </div> -->
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
@@ -39,12 +42,20 @@
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+        </li> -->
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+     @if(masterService.loggedUserData){
+      <form class="d-flex" >
+        <span class="text-white">
+        {{masterService.loggedUserData.userName}}
+        </span>
+        <button class="btn btn-warning" type="submit" routerLink="login" (click)="logOff()">LogOff</button>
+      </form>
+     } @else {
+      <form class="d-flex">
         <button class="btn btn-outline-success" type="submit" routerLink="login">Login</button>
       </form>
+     } 
     </div>
   </div>
 </nav>
