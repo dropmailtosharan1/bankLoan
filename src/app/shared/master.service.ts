@@ -24,7 +24,7 @@ export class MasterService {
         this.loggedUserData = JSON.parse(loggedData);
       }
     }
-  }
+  } 
   onSaveLoan(obj:LoanDetails){
     return this.http.post<APIResponse>('https://projectapi.gerasim.in/api/BankLoan/AddNewApplication', obj);
   }

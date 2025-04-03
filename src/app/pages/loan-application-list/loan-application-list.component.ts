@@ -32,7 +32,7 @@ export class LoanApplicationListComponent {
     this.masterService.getMyApplications(this.masterService.loggedUserData.userId).subscribe((res:APIResponse)=>{
       this.applicationList=res.data;
     })
-  }
+  } 
 
   setStatus(event:any, panNo:string){
     this.masterService.changeStatus(panNo, event.target.value).subscribe((res:APIResponse)=>{

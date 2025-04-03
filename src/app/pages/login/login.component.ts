@@ -83,6 +83,6 @@ export class LoginComponent {
           alert('Network Error');
         }
       );
-  }
+  } 
 }
 
